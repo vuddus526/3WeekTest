@@ -26,18 +26,17 @@ public class Board extends Timestamped{
     @Column(nullable = false)
     private String content;
 
-    public Board(BoardRequestDto boardRequestDto){
-        this.title = boardRequestDto.getTitle();
-        this.username = boardRequestDto.getUsername();
-        this.password = boardRequestDto.getPassword();
-        this.content = boardRequestDto.getContent();
+    public Board(BoardRequestDto.BoardResistDto boardResistDto){
+        this.title = boardResistDto.getTitle();
+        this.username = boardResistDto.getUsername();
+        this.password = boardResistDto.getPassword();
+        this.content = boardResistDto.getContent();
     }
 
-    public void updateBoard(BoardRequestDto boardRequestDto){
-        this.title = boardRequestDto.getTitle();
-        this.username = boardRequestDto.getUsername();
-        this.password = boardRequestDto.getPassword();
-        this.content = boardRequestDto.getContent();
+    public void updateBoard(BoardRequestDto.BoardResistDto boardResistDto){
+        this.title = boardResistDto.getTitle();
+        this.username = boardResistDto.getUsername();
+        this.password = boardResistDto.getPassword();
+        this.content = boardResistDto.getContent();
     }
-
 }
