@@ -1,4 +1,4 @@
-# 3WeekTest
+# Why: 과제 제출시에는 아래 질문을 고민해보고 답변을 함께 제출해주세요.
 
 1. 수정, 삭제 API의 request를 어떤 방식으로 사용하셨나요? (param, query, body)
 수정에서는 param으로 id값을 넘겨주고 body로 JSON 입력받아 객체로 반환했습니다
@@ -28,3 +28,4 @@ Service : Controller와 Repository 사이의 로직 역할을 넣었습니다
 
 6. API 명세서 작성 가이드라인을 검색하여 직접 작성한 명세서와 비교해보세요
 ![image](https://user-images.githubusercontent.com/97796338/193968429-f025a5ec-2f21-4383-b807-65cf5edafba6.png)
+![image](https://user-images.githubusercontent.com/97796338/193968598-845631f2-bea3-4262-99f9-7148a8134ab9.png)
