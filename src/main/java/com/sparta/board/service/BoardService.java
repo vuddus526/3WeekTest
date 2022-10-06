@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @RequiredArgsConstructor
 @Service
@@ -18,10 +17,10 @@ public class BoardService {
     private final BoardRepository boardRepository;
         // 전체 게시글 목록 조회 (GET)
         @Transactional
-        public List<BoardResponseDto.BoardInfoDto> getBoards(){
+        public Map<String, Object> getBoards(){
             List<Board> boards = boardRepository.findAllByOrderByModifiedAtDesc();
             List<BoardResponseDto.BoardInfoDto> lists = new ArrayList<>();
-
+            Map<String, Object> map = new LinkedHashMap<>();
             // 생성자
             // setter (권장 x)
             // builder
@@ -30,7 +29,11 @@ public class BoardService {
             for (Board board : boards) {
                 lists.add(new BoardResponseDto.BoardInfoDto(board));
             }
-            return lists;
+            map.put("success", true);
+            map.put("data", lists);
+            map.put("error", "null");
+
+            return map;
         }
 
         // 게시글 작성 (POST)

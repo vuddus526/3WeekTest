@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
@@ -16,7 +17,7 @@ public class BoardController {
 
     // 전체 게시글 목록 조회 (GET)
     @GetMapping("/api/board")
-    public List<BoardResponseDto.BoardInfoDto> getBoard(){
+    public Map<String, Object> getBoard(){
         return boardService.getBoards();
     }
 
